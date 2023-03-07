@@ -1,0 +1,37 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  
+}
+
+:root{
+  --primary :	#4267B2;
+  --para:rgb(43, 68, 60);
+}
+/* 
+#theme:checked ~ .App{
+filter: invert(1);
+} */
+.app{
+  display: grid;
+  grid-template-columns: 1fr 5fr;
+  overflow: hidden;
+ 
+  position: relative;
+}
+@media(max-width:950px){
+  .app{
+    display: grid;
+    grid-template-columns: 1fr;
+  
+  }
+}
+@media(max-width:790px){
+  .app{
+ overflow-y: scroll;
+  
+  }
+}
+
+

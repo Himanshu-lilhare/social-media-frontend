@@ -1,0 +1,52 @@
+.home{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.postwrapper{
+    height: 100%;
+    width: 600px;
+    padding-bottom: 2rem;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+   overflow-y: scroll;
+}
+
+.postwrapper::-webkit-scrollbar {
+    width: 1rem;
+}
+
+
+/* Media queries */
+
+@media(max-width:950px){
+
+.postwrapper{
+    padding: 6rem 0rem;
+    width: 450px;
+    padding-left: 0.5rem;
+}
+
+}
+@media(max-width:507px){
+
+    .postwrapper{
+        padding: 6rem 0rem;
+        width: 400px;
+        padding-left: 0.5rem;
+    }
+    
+    }
+@media(max-width:389px){
+
+    .postwrapper{
+        padding: 6rem 0rem;
+        width: 291px;
+       
+    }
+    
+    }

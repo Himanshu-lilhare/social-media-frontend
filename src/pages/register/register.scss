@@ -1,0 +1,141 @@
+.register{
+  height: 100vh;
+  width: 100vw;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .card {
+    display: flex;
+ 
+    width: 80rem;
+    min-height: 52rem;
+    
+
+    .left {
+      border-right: 0.5px solid rgb(238, 237, 237);
+      flex: 1;
+      height: 59rem;
+      width: 44.1rem;
+    
+      position: relative;
+      background-color: var(--primary);
+      .imagescard {
+        width: 244px;
+        height: 503px;
+        position: absolute;
+        top: 37px;
+        left: 68px;
+        border-radius: 18px;
+        box-shadow: 11px 46px 117px rgba(0, 0, 0, 0.22);
+        overflow-x: hidden;
+
+        .image {
+          border-radius: 18px;
+          object-fit: cover;
+          height: 100%;
+          width: 100%;
+        }
+      }
+    }
+    .right {
+      padding:0rem 2rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid var(--primary);
+      border-radius: 5rem 0 0 5rem;
+      .wrapper {
+        .registerImageDiv{
+           display: flex;
+           align-items: center;
+           justify-content: center;
+          img{
+            width: 150px;
+       
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+          }
+        }
+      
+        display: flex;
+        flex-direction: column;
+  height: 100%;
+        width: 90%;
+        padding: 1rem;
+
+        h2 {
+          font-size: 3.5rem;
+          font-weight: 500;
+          margin-bottom: 3rem;
+          letter-spacing: 0.1rem;
+        }
+        input {
+          margin: 1.5rem 0;
+          padding: 1rem;
+          font-size: 1.4rem;
+          width: 100%;
+          border: none;
+
+          border-bottom: 0.4px solid rgb(200, 198, 198);
+        }
+
+        button {
+          margin-top: 4rem;
+          padding: 1rem;
+          font-size: 1.4rem;
+          letter-spacing: 0.1rem;
+          font-weight: 500;
+          border-radius: 0.8rem;
+          border: none;
+          background-color: var(--primary);
+          color: white;
+          cursor: pointer;
+          border: 1px solid var(--primary);
+          transition: all 0.5s ease;
+          &:hover {
+            &:hover {
+              background-color: white;
+              color: var(--primary);
+            }
+          }
+          // text-align: center;
+        }
+      }
+      .wrapper2 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1.5rem;
+        width: 90%;
+        margin-top: 1rem;
+        padding: 1rem;
+        p {
+          font-size: 1.4rem;
+        }
+        button {
+          background-color: white;
+          font-weight: 100;
+          font-size: 1.5rem;
+          padding: 0.7rem;
+          width: 10rem;
+          color: var(--primary);
+          border-radius: 1rem;
+          border: 0.1rem solid var(--primary);
+          background-color: var(--primary);
+          color: white;
+
+          transition: all 0.5s ease;
+          cursor: pointer;
+          &:hover {
+            background-color: white;
+            color: var(--primary);
+          }
+        }
+      }
+    }
+  }
+}

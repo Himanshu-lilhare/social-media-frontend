@@ -1,0 +1,56 @@
+.search{
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  padding-top: 8rem;
+  padding-bottom: 8rem;
+}
+.searchUserDiv{
+    width: 50%;
+    height:100%;
+    border: 1px solid rgb(215, 215, 215);
+    padding: 2rem 1rem;
+    -webkit-box-shadow: 0px 0px 13px -1px rgba(0,0,0,0.4);
+-moz-box-shadow: 0px 0px 13px -1px rgba(0,0,0,0.4);
+box-shadow: 0px 0px 13px -1px rgba(0,0,0,0.4);
+}
+.searchUserInput{
+  padding: 1rem;
+  width: 100%;
+  border: 0.5px solid #b7b7b7;
+  outline: none;
+  border-radius: 14px;
+  margin-bottom: 1rem;
+}
+.searchUserLink{
+  display: flex;
+  text-decoration: none;
+  align-items: center;
+  border: 1px solid #e2dede;
+  gap: 5%;
+  margin-bottom: 4px;
+  padding: 0.3rem;
+
+}
+.searchedUserImage{
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+}
+.searchedUserName{
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  color: black;
+}
+@media(max-width:820px){
+  .searchUserDiv{
+    width: 400px;
+  }
+}
+@media(max-width:440px){
+    .searchUserDiv{
+      width: 270px;
+      padding: 2rem 0rem;
+    }
+  }

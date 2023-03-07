@@ -1,0 +1,30 @@
+.Person{
+    height: 10%;
+    display: flex;
+    background-color: white;
+    border: 1px solid black;
+    margin-top: 40px;
+}
+.personImage{
+     flex: 1;
+     height: 100%;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+}
+.personImage img{
+  width: 100%;
+  height: 80%;
+  object-fit: contain;
+}
+.personName{
+    flex: 4;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
+.personName p{
+font-size: 14px;
+font-weight: 500;
+letter-spacing: 1px;
+}

@@ -1,0 +1,198 @@
+.profilepage {
+  display: flex;
+  justify-content: center;
+ }
+.FaltuDiv{
+  height: 100px;
+  border: 1px solid red;
+}
+.profilewrapper {
+  height: 100vh;
+  width: 85%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-y: scroll;
+  padding: 1rem 0rem;
+
+  
+}
+.profilewrapper::-webkit-scrollbar {
+  width: 1rem;
+}
+
+
+.profileinfo {
+  max-width: 100%;
+  display: flex;
+  align-items: center;
+
+
+}
+.profileimage {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+ 
+  
+}
+.profileimagediv {
+ border-radius: 50%;
+    width: 211px;
+    border: 1px solid rgb(172, 172, 172);
+    height: 211px;
+}
+.profileimagediv img {
+      height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    object-fit: fill;
+}
+.profiledetails {
+  flex: 1;
+ 
+}
+.editProfile:hover{
+  transition: 0.3s ease;
+background-color: rgb(221, 221, 221);
+}
+
+.editprofilediv {
+ 
+  padding: 1rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.editprofilediv h1 {
+      font-weight: 500;
+    font-size: 2.3rem;
+    letter-spacing: 1px;
+}
+.editprofilediv button {
+  padding: 0.6rem 1rem;
+  border-radius: 1rem;
+  background-color: transparent;
+  border: 0.5px solid black;
+  margin-right: 1rem;
+  font-size: 1.6rem;
+  font-weight: 400;
+}
+.editprofilediv svg {
+  font-size: 2rem;
+}
+.actualeditprofile {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  margin: 1.5rem 0;
+}
+
+.followpostinfo {
+  max-width: 500px;
+  display: flex;
+ gap: 4%;
+  justify-content: center;
+}
+.followpostinfo button {
+  padding: 0.1rem;
+  font-size: 1.3rem;
+  font-weight: 500;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+.profilename {
+  margin-top: 3rem;
+}
+.profilename h2 {
+      letter-spacing: 2px;
+    font-size: 1.5rem;
+}
+.profileposts{
+  width: 100%;
+  margin-top: 1rem;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr 1fr 1fr;
+   } 
+.profileMessage{
+  width: 100%;
+  background-color: white;
+  border: 0.5px solid rgb(203, 203, 203);
+  margin-top: 10px;
+}
+
+
+@media(max-width:800px){
+  .profilewrapper{
+    width: 100%;
+  }
+  .profileinfo{
+    padding: 1rem 1rem;
+  }
+}
+@media(max-width:950px){
+  .profilepage{
+    margin-top: 8vh;
+    margin-bottom: 6rem;
+  }
+  .profileimage{
+ 
+    height: 156px;
+   
+  }
+  .profileimagediv{
+    border-radius: 50%;
+    width: 166px;
+    border: 1px solid rgb(172, 172, 172);
+    height: 100%;
+  }
+}
+@media(max-width:502px){
+  .profileposts{
+    gap: 0.3rem;
+    margin-top: 3rem;
+  }
+.profileinfo{
+  flex-direction: column;
+  height: 53vh;
+  width: 100%;
+}
+.profileimage{
+ 
+ 
+  width: 155px;
+}
+ 
+
+.profileimagediv{
+  border-radius: 50%;
+  width: 100%;
+  border: 1px solid rgb(172, 172, 172);
+  height: 100%;
+}
+
+.editprofilediv{
+  padding: 0.5rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.editprofilediv h1{
+  font-size: 1.8rem;
+}
+.profilename {
+  margin-top: 2rem;
+  text-align: center
+}
+.profileBio{
+  text-align: center;
+}
+
+}

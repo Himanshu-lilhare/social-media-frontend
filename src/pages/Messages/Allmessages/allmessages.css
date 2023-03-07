@@ -1,0 +1,33 @@
+.allmessages{
+  
+    height: 82%;
+    max-width: 699px;
+    margin: auto;
+    margin-top: 76px;
+    background-color: #f7f7f7;
+    overflow-y: scroll;
+    -webkit-box-shadow: 0px 0px 13px -1px rgba(0,0,0,0.4);
+    -moz-box-shadow: 0px 0px 13px -1px rgba(0,0,0,0.4);
+    box-shadow: 0px 0px 13px -1px rgba(0,0,0,0.4);
+}
+
+
+ /* for hiding or edit scroll bar  */
+
+
+.allmessages::-webkit-scrollbar{
+    width: 6px;
+    padding: 0rem 0.2rem;
+    background: rgb(205, 203, 203);
+    border: 0.5px solid rgb(216, 216, 216);
+}
+.allmessages::-webkit-scrollbar-thumb{
+    width: 5px;
+    background: rgb(207, 207, 207);
+}
+
+@media (max-width: 733px) {
+    .allmessages {
+     box-shadow: none;
+    }
+  }

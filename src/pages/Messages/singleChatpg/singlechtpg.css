@@ -1,0 +1,91 @@
+.singleChat {
+  height: 100vh;
+  width: 100%;
+  border: 1px solid rgb(194, 194, 194);
+  overflow-y: hidden;
+  position: relative;
+}
+.typeMessage {
+  width: 100%;
+  padding: 10px;
+  font-size: 15px;
+  position: sticky;
+  bottom: 0;
+}
+.chatHead {
+  width: 100%;
+  height: 40px;
+   position: sticky;
+  background-color: white;
+  top: 0;
+  left: 0;
+  box-shadow: 4px 7px 31px -12px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 4px 7px 31px -12px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 4px 7px 31px -12px rgba(0, 0, 0, 0.75);
+  z-index: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.chatImg {
+  height: 80%;
+  margin-right: 15px;
+  display: flex;
+  align-items: center;
+  border-radius: 50%;
+  border: 0.5px solid rgb(161, 161, 161);
+  cursor: pointer;
+}
+.chatImg:hover {
+ opacity: 0.5;
+}
+.chatImg img {
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.chatDiv {
+  height: calc(100% - 82px);
+
+  overflow-y: scroll;
+  padding: 10px 15px;
+}
+.oneChatDiv {
+  width: max-content;
+  height: max-content;
+  padding: 15px;
+
+  max-width: 50vw;
+  display: flex;
+  align-items: center;
+  border-radius: 5%;
+}
+.oneChatDiv p {
+  font-size: 14px;
+}
+.sendMessage {
+  font-size: 35px;
+  transition: all 0.5s ease-in-out;
+  padding: 3px;
+}
+.sendMessage:hover {
+  background-color: rgb(189, 189, 189);
+  border-radius: 50%;
+}
+.backArrow{
+  font-size: 27px;
+  margin-left: 8px;
+  padding: 5px;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: 0.2s ease;
+}
+.backArrow:hover{
+background-color: rgb(199, 199, 199);
+}
+
+@media (max-width: 950px) {
+  .singleChat {
+    z-index: 1000000;
+  }
+}
