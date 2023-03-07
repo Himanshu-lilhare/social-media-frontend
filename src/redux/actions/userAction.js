@@ -1,10 +1,11 @@
 import axios from "axios";
+const serverLink='http://localhost:5000'
 export const loginUser = (email, password) => async (dispatch) => {
   try {
     dispatch({ type: "loginRequest" });
     console.log(email, password);
     const { data } = await axios.post(
-      "http://localhost:5000/login",
+      `${serverLink}/login`,
       { email, password },
       {
         headers: {
@@ -26,7 +27,7 @@ export const registerUser =
       dispatch({ type: "registerRequest" });
       console.log(email, password);
       const { data } = await axios.post(
-        "http://localhost:5000/register",
+        `${serverLink}/register`,
         { name, email, password, imageUri },
         {
           headers: {
@@ -45,7 +46,7 @@ export const registerUser =
 export const loadUser = () => async (dispatch) => {
   try {
     dispatch({ type: "loadUserRequest" });
-    const { data } = await axios.get("http://localhost:5000/getmyprofile", {
+    const { data } = await axios.get(`${serverLink}/getmyprofile`, {
       withCredentials: true,
     });
     dispatch({ type: "loadUserSuccess", payload: data });
@@ -57,7 +58,7 @@ export const loadUser = () => async (dispatch) => {
 export const logOutUser = () => async (dispatch) => {
   try {
     dispatch({ type: "logOutUserRequest" });
-    const { data } = await axios.get("http://localhost:5000/logout", {
+    const { data } = await axios.get(`${serverLink}/logout`, {
       withCredentials: true,
     });
     dispatch({ type: "logOutUserSuccess" });
@@ -72,7 +73,7 @@ export const searchUser =
     try {
       dispatch({ type: "searchUsersRequest" });
       const { data } = await axios.get(
-        `http://localhost:5000/search?username=${search}`,
+        `${serverLink}/search?username=${search}`,
         {
           withCredentials: true,
         }
@@ -87,7 +88,7 @@ export const getOtherUser = (id) => async (dispatch) => {
   try {
     dispatch({ type: "otherUserRequest" });
     const { data } = await axios.get(
-      `http://localhost:5000/getotheruser/${id}`,
+      `${serverLink}/getotheruser/${id}`,
       {
         withCredentials: true,
       }
@@ -105,7 +106,7 @@ export const followUnfollowUser = (id) => async (dispatch) => {
 
     dispatch({ type: "followUnfollowRequest" });
     const { data } = await axios.get(
-      `http://localhost:5000/followUnfollow/${id}`,
+      `${serverLink}/followUnfollow/${id}`,
       {
         withCredentials: true,
       }

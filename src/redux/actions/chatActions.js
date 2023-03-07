@@ -1,11 +1,13 @@
 import axios from "axios";
 
 
+const serverLink='http://localhost:5000'
+
 
 export const getAllChats = () => async (dispatch) => {
   try {
     dispatch({ type: "getChatsRequest" });
-    const { data } = await axios.get("http://localhost:5000/fetchchats", {
+    const { data } = await axios.get(`${serverLink}/fetchchats`, {
       withCredentials: true,
     });
     dispatch({ type: "getChatsSuccess", payload: data });
@@ -22,7 +24,7 @@ export const accessChat = (chatId, userId) => async (dispatch) => {
     dispatch({ type: "accessChatsRequest" });
    
     const { data } = await axios.post(
-      `http://localhost:5000/chat`,
+      `${serverLink}/chat`,
       {
         chatId,
         userId,
@@ -49,7 +51,7 @@ export const sendMessageBaby = (chatId,content,socket) => async (dispatch) => {
   try {
     dispatch({ type: "sendMessageRequest" });
 
-    let { data } = await axios.post(`http://localhost:5000/sendmessage`,{
+    let { data } = await axios.post(`${serverLink}/sendmessage`,{
       chatId,
       content
     }, {
@@ -74,7 +76,7 @@ export const getAllMessages = (chatId) => async (dispatch) => {
   try {
     dispatch({ type: "getAllMessagesRequest" });
 
-    const { data } = await axios.get(`http://localhost:5000/fetchallmessages/${chatId}`, {
+    const { data } = await axios.get(`${serverLink}/fetchallmessages/${chatId}`, {
       withCredentials: true,
     });
     

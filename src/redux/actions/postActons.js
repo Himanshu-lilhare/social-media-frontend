@@ -1,10 +1,10 @@
 import axios from "axios";
-
+const serverLink='http://localhost:5000'
 export const getFollowingPost = () => async (dispatch) => {
   try {
     dispatch({ type: "getFollowingpostRequest" });
     const { data } = await axios.get(
-      "http://localhost:5000/getFollowingPosts",
+      `${serverLink}/getFollowingPosts`,
       {
         withCredentials: true,
       }
@@ -21,7 +21,7 @@ export const getFollowingPost = () => async (dispatch) => {
 export const likeUnlikePost = (id) => async (dispatch) => {
   try {
     dispatch({ type: "likePostRequest" });
-    const { data } = await axios.get(`http://localhost:5000/likeUnlike/${id}`, {
+    const { data } = await axios.get(`${serverLink}/likeUnlike/${id}`, {
       withCredentials: true,
     });
     dispatch({ type: "likePostSuccess", payload: data });
@@ -34,7 +34,7 @@ export const CommentPost = (id, comment) => async (dispatch) => {
   try {
     dispatch({ type: "commentPostRequest" });
     const { data } = await axios.put(
-      `http://localhost:5000/post/comments/${id}`,
+      `${serverLink}/post/comments/${id}`,
       { comment },
       {
         headers: {
@@ -56,7 +56,7 @@ export const deleteCommentPost = (id, commentId) => async (dispatch) => {
     });
 
     const { data } = await axios.delete(
-      `http://localhost:5000/deletecomment/${id}`,
+      `${serverLink}/deletecomment/${id}`,
       {
         data: commentId,
       },
@@ -79,7 +79,7 @@ export const deleteCommentPost = (id, commentId) => async (dispatch) => {
 export const getMyPosts = () => async (dispatch) => {
   try {
     dispatch({ type: " myPostsRequest" });
-    const { data } = await axios.get("http://localhost:5000/getmyposts", {
+    const { data } = await axios.get(`${serverLink}/getmyposts`, {
       withCredentials: true,
     });
     dispatch({ type: "myPostsSuccess", payload: data.posts });
@@ -91,7 +91,7 @@ export const getMyPosts = () => async (dispatch) => {
 export const getOthersPosts = (id) => async (dispatch) => {
   try {
     dispatch({ type: " othersPostsRequest" });
-    const { data } = await axios.get(`http://localhost:5000/getotherspost/${id}`, {
+    const { data } = await axios.get(`${serverLink}/getotherspost/${id}`, {
       withCredentials: true,
     });
     dispatch({ type: "othersPostsSuccess", payload: data.posts });
@@ -105,7 +105,7 @@ export const createPost = (caption, image) => async (dispatch) => {
     dispatch({ type: "createPostRequest" });
     console.log(caption, image);
     const { data } = await axios.post(
-      `http://localhost:5000/post/uploadpost`,
+      `${serverLink}/post/uploadpost`,
       { caption, image },
       {
         headers: {
@@ -125,7 +125,7 @@ export const editCaptionPost = (caption, id) => async (dispatch) => {
     dispatch({ type: " EditPostCaptionRequest" });
     // console.log(caption,image)
     const { data } = await axios.put(
-      `http://localhost:5000/editpostcaption/${id}`,
+      `${serverLink}/editpostcaption/${id}`,
       { caption },
       {
         headers: {
@@ -148,7 +148,7 @@ export const deletePost = (id) => async (dispatch) => {
     dispatch({ type: "deletePostRequest" });
     // console.log(caption,image)
     const { data } = await axios.delete(
-      `http://localhost:5000/deletepost/${id}`,
+      `${serverLink}/deletepost/${id}`,
 
       {
         withCredentials: true,

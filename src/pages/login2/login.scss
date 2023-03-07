@@ -127,8 +127,41 @@
   }
 }
 
-@mixin mobile {
-  @media (max-width: 820px) {
-    @content;
+// making responsive 888888888888888
+// ********************
+
+
+$mobile-width:820px;
+
+// @mixin mobile {
+//   @media (max-width: #{$mobile-width}) {
+//     @content;
+//   }
+// }
+
+@media(max-width:$mobile-width){
+  .card{
+    margin: 2rem;
+  }
+  .login .card{
+    min-height: 44rem;
+  }
+  .login .card .right{
+    padding: 0rem;
+  }
+  .login .card .right .wrapper {
+    padding: 0rem;
+  }
+  .login .card .right .wrapper h2{
+    font-size: 2.5rem;
+  }
+  
+
+.login .card .right .wrapper2{
+  padding: 1rem 0rem;
+}
+ 
+  .left{
+    display: none;
   }
 }
