@@ -8,7 +8,16 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    animation: choteSeBada 0.1s linear;
  
+}
+@keyframes choteSeBada{
+    0%{
+        scale: 0;
+    }
+    100%{
+        scale: 1;
+    }
 }
 .Commentcontainer{
     height: 50%;
@@ -16,7 +25,9 @@
 background-color: white;
     position: relative;
     padding: 1rem;
+   
 }
+
 
 .Comment-modal-nav{
     position: absolute;
@@ -24,8 +35,12 @@ background-color: white;
     height: 3rem;
     background-color: white;
     padding: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 
 }
+
 .comment-form{
     /* border: 1px solid black; */
     margin-top: 40px;

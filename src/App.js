@@ -1,10 +1,10 @@
 import React, { useEffect, lazy, Suspense } from "react";
 import "./App.css";
-import {Toaster} from "react-hot-toast"
+import { Toaster } from "react-hot-toast";
 import Login2 from "./pages/login2/Login";
 import Register from "./pages/register/register";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import { Navigate } from "react-router-dom";
+
 import { useDispatch, useSelector } from "react-redux";
 import { loadUser } from "./redux/actions/userAction";
 
@@ -22,7 +22,7 @@ const SingleChatPg = lazy(() =>
 );
 
 const App = () => {
-  const { isAuthenticate, user, message, error } = useSelector(
+  const { isAuthenticate,message,error } = useSelector(
     (state) => state.userReducer
   );
   const dispatch = useDispatch();
@@ -38,44 +38,40 @@ const App = () => {
 
   return (
     <Router>
-       <Suspense fallback={<div>loading</div>}>
-      <div className="app">
-        {isAuthenticate && <Header />}
-        <Routes>
-         
-          <Route
-            path="/"
-            element={isAuthenticate ? <Home /> : <Login2 />}
-          ></Route>
-          <Route path="/register" element={<Register />}></Route>
-          <Route
-            path="/message"
-            element={isAuthenticate ? <Message /> : <Login2 />}
-          ></Route>
-          <Route
-            path="/profile"
-            element={isAuthenticate ? <Profile /> : <Login2 />}
-          ></Route>
-          <Route
-            path="/createpost"
-            element={isAuthenticate ? <CreatePost /> : <Login2 />}
-          ></Route>
-          <Route
-            path="/search"
-            element={isAuthenticate ? <SearchUser /> : <Login2 />}
-          ></Route>
-          <Route path="/profile/:id" element={<OtherProfile />}></Route>
-          <Route
-            path="/message/chat"
-            element={isAuthenticate ? <SingleChatPg /> : <Login2 />}
-          ></Route>
-          
-        
-        </Routes>
-      </div>
-      <Toaster/>
+      <Suspense fallback={<div>loading</div>}>
+        <div className="app">
+          {isAuthenticate && <Header />}
+          <Routes>
+            <Route
+              path="/"
+              element={isAuthenticate ? <Home /> : <Login2 />}
+            ></Route>
+            <Route path="/register" element={<Register />}></Route>
+            <Route
+              path="/message"
+              element={isAuthenticate ? <Message /> : <Login2 />}
+            ></Route>
+            <Route
+              path="/profile"
+              element={isAuthenticate ? <Profile /> : <Login2 />}
+            ></Route>
+            <Route
+              path="/createpost"
+              element={isAuthenticate ? <CreatePost /> : <Login2 />}
+            ></Route>
+            <Route
+              path="/search"
+              element={isAuthenticate ? <SearchUser /> : <Login2 />}
+            ></Route>
+            <Route path="/profile/:id" element={<OtherProfile />}></Route>
+            <Route
+              path="/message/chat"
+              element={isAuthenticate ? <SingleChatPg /> : <Login2 />}
+            ></Route>
+          </Routes>
+        </div>
+        <Toaster />
       </Suspense>
-   
     </Router>
   );
 };

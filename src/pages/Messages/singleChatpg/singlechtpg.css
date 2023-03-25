@@ -12,6 +12,12 @@
   position: sticky;
   bottom: 0;
 }
+.typingIndicator{
+  position: absolute;
+  top: 13px;
+  left: 54px;
+
+}
 .chatHead {
   width: 100%;
   height: 40px;

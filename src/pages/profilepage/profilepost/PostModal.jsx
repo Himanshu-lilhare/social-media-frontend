@@ -7,11 +7,11 @@ const PostModal = ({post,isAccount,postmodalToggler}) => {
 
 
   return (
-    <div className="ProfilePostModal">
-      <GiTireIronCross
-      onClick={()=>{
-    postmodalToggler()
-      }}
+    <div className="ProfilePostModal" onClick={()=>{
+      postmodalToggler()
+        }}>
+      {/* <GiTireIronCross
+    
       style={{
         position:"absolute",
         top:"2rem",
@@ -19,8 +19,8 @@ const PostModal = ({post,isAccount,postmodalToggler}) => {
         fontSize:"30px",
         color:'white'
       }}
-      />
-        <Post caption={post.caption} post={post} postid={post._id} isAccount={isAccount} />
+      /> */}
+        <Post  caption={post.caption} post={post} postid={post._id} isAccount={isAccount} />
     </div>
   )
 }

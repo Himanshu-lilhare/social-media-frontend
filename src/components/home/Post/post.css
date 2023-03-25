@@ -1,214 +1,242 @@
-.post{
-    max-height: max-content;
-    width: 95%;
-    border: 1px solid rgb(216, 214, 214);
-    padding: 1rem;
-    padding-top: 0.2rem;
-    margin-top: 2rem;
-    border-radius: 2rem;
-    background-color: rgb(241, 241, 241);
-    -webkit-box-shadow: 0px 0px 14px -4px rgba(0,0,0,0.75);
-    -moz-box-shadow: 0px 0px 14px -4px rgba(0,0,0,0.75);
-    box-shadow: 0px 0px 14px -4px rgba(0,0,0,0.75);
+.post {
+  max-height: max-content;
+  width: 95%;
+  border: 1px solid rgb(216, 214, 214);
+  padding: 1rem;
+  padding-top: 0.2rem;
+  margin-top: 2rem;
+  border-radius: 2rem;
+  background-color: rgb(241, 241, 241);
+  -webkit-box-shadow: 0px 0px 14px -4px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 0px 14px -4px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 0px 14px -4px rgba(0, 0, 0, 0.75);
 }
 
-.topcontent{
-    height: 5rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    border-bottom: 0.5px solid #e0dddd;
-   
+.topcontent {
+  height: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 0.5px solid #e0dddd;
 }
-.usernameprofile{
-    height: 100%;
-    color: black;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-   
+.usernameprofile {
+  height: 100%;
+  color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.usernameprofile span{
-    cursor: pointer;
-    margin-left: 1rem;
-    font-size: 15px;
-    letter-spacing: 1px;
+.usernameprofile span {
+  cursor: pointer;
+  margin-left: 1rem;
+  font-size: 15px;
+  letter-spacing: 1px;
 }
-.usernameprofile img{
-    height: 70%;
- 
-    border-radius: 50px;
-    cursor: pointer;
-  
+.usernameprofile img {
+  height: 81%;
+  width: 37px;
+  border: 1px solid rgb(146, 146, 146);
+  border-radius: 50px;
+  cursor: pointer;
 }
-.morelogo{
-    color: rgb(0, 0, 0);
-    font-size: 2rem;
-    transform: rotate(90deg);
-    margin-right: 2rem;
-    cursor: pointer;
+.usernameprofile img:hover{
+  filter: brightness(70%);
+  transform:0.3s ease;
 }
-.postimage{
-    width: 100%;
-    height: 600px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    padding-top: 5px;
+.morelogo {
+  color: rgb(0, 0, 0);
+  font-size: 2rem;
+  transform: rotate(90deg);
+  margin-right: 2rem;
+  cursor: pointer;
 }
-.postimage img{
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
+.postimage {
+  width: 100%;
+  height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding-top: 5px;
 }
-.allposticons{
-    font-size: 2.5rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 0.5px solid #e0dddd;
-   
+.postimage img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
-.likecomment{
-    padding: 0.5rem 2rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 2rem;
-  
+.allposticons {
+  font-size: 2.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 0.5px solid #e0dddd;
+}
+.likecomment {
+  padding: 0.5rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
 }
 
-.likecomment> svg{
-    cursor: pointer;
+.likecomment > svg {
+  cursor: pointer;
 }
-.likecomment button > svg{
-    font-size: 2.3rem;
-    cursor: pointer;
+.likecomment button > svg {
+  font-size: 2.3rem;
+  cursor: pointer;
 }
-.commenticon{
-    font-size: 4rem;
+.commenticon {
+  font-size: 4rem;
 }
-.saveicon{
-    padding: 0 2rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
+.saveicon {
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
 }
-.likedby{
-    padding: 0.5rem 1.5rem;
-    font-size: 1.5rem;
-    font-weight: 400;
-/* border: 0.4px solid black; */
+.likedby {
+  padding: 0.5rem 1.5rem;
+  font-size: 1.5rem;
+  font-weight: 400;
+  /* border: 0.4px solid black; */
 }
-.description{
-    display: flex;
-    align-items: center;
-    font-size: 1.4rem;
-    padding: 0.5rem 1.5rem;
-    font-weight: 400;
-    letter-spacing: 1px;
-    /* border: 0.4px solid black; */
+.description {
+  display: flex;
+  align-items: center;
+  font-size: 1.4rem;
+  padding: 0.5rem 1.5rem;
+  font-weight: 400;
+  letter-spacing: 1px;
+  /* border: 0.4px solid black; */
 }
-.description button{
- padding: 0.5rem;
+.description button {
+  padding: 0.5rem;
   background: transparent;
   border: none;
   cursor: pointer;
-  color:	#4267B2 ;
+  color: #4267b2;
   font-weight: 500;
 }
-.comment{
-    border-top: 1px solid rgb(216, 214, 214);
-    display: flex;
-    padding: 0.5rem 1.5rem;
-    /* border: 0.4px solid black; */
-    justify-content: space-between;
+.comment {
+  border-top: 1px solid rgb(216, 214, 214);
+  display: flex;
+  padding: 0.5rem 1.5rem;
+  /* border: 0.4px solid black; */
+  justify-content: space-between;
+}
+.comment input {
+  width: 80%;
+  height: 100%;
+  padding: 0.6rem 0.8rem;
+  font-size: 1.5rem;
+  border: none;
+}
 
-}
-.comment input{
-    width: 80%;
-    height: 100%;
-    padding: 0.6rem 0.8rem;
-    font-size: 1.5rem;
-    border: none;
+.comment button {
+  font-size: 1.6rem;
+  letter-spacing: 1px;
+  color: #135df0;
+  background: transparent;
+  height: 100%;
+  padding: 0.6rem 0.8rem;
+  border: none;
+  cursor: pointer;
 }
 
-.comment button{
-     font-size: 1.6rem;
-     letter-spacing: 1px;
-     color:#135df0 ;
-     background: transparent;
-    height: 100%;
-    padding: 0.6rem 0.8rem;
-    border: none;
-    cursor: pointer;
+.loading {
+  filter: blur(10px);
+  clip-path: inset(0);
 }
+.loaded {
+  filter: blur(0px);
+  transition: filter 0.2s linear;
+}
+
+
+
 
 /* media queries *********
 ************** */
 
-@media(max-width:950px){
-
-    .postimage{
-        height: 439px
-    }
-    
-    }
-
-    @media(max-width:507px){
-
-        .description{
-            font-size: 1.4rem;
-        
-            font-weight: 400;
-            letter-spacing: 1px;
-      }
-      .likedby{
-          
-            font-size: 1.3rem;
-    }
-   
-    
-     .comment input {
-        
-        font-size: 1.4rem;
-     }
-       
-     .comment button {
-        font-size: 1.5rem;
-        
-    }
-        
-        }
-
-@media(max-width:389px){
-
-  .description{
-        font-size: 1.2rem;
-        padding: 0.2rem rem;
-        font-weight: 400;
-        letter-spacing: 1px;
+@media (max-width: 950px) {
+  .postimage {
+    height: 439px;
   }
-  .likedby{
-        padding: 0.5rem 0rem;
-        font-size: 1.3rem;
 }
-  .postimage{
-        height: 310px;
+
+@media (max-width: 507px) {
+  .description {
+    font-size: 1.4rem;
+
+    font-weight: 400;
+    letter-spacing: 1px;
+  }
+  .likedby {
+    font-size: 1.3rem;
+  }
+
+  .comment input {
+    font-size: 1.4rem;
+  }
+
+  .comment button {
+    font-size: 1.5rem;
+  }
 }
-  .likecomment{
+
+@media (max-width: 389px) {
+  .description {
+    font-size: 1.2rem;
+    padding: 0.2rem rem;
+    font-weight: 400;
+    letter-spacing: 1px;
+  }
+  .likedby {
     padding: 0.5rem 0rem;
-}
- .comment input {
+    font-size: 1.3rem;
+  }
+  .postimage {
+    height: 310px;
+  }
+  .likecomment {
+    padding: 0.5rem 0rem;
+  }
+  .comment input {
     padding: 0.6rem 0rem;
     font-size: 1.3rem;
- }
-   
- .comment button {
+  }
+
+  .comment button {
     font-size: 1.4rem;
     padding: 0.6rem 0rem;
+  }
 }
-        
+
+
+
+/* for profile post  */
+.forProfilePost{
+    width:50% !important
+}
+.forProfilePostImage{
+    height: 50vh !important
+}
+
+@media (max-width:850px) {
+    .forProfilePost{
+        width:70% !important
+    }
+    .forProfilePostImage{
+      height: 47vh !important
+  }
+}
+@media (max-width:500px) {
+    .forProfilePost{
+        width:90% !important
+    }
+    .forProfilePostImage{
+        height: 40vh !important
+    }
 }

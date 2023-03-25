@@ -16,6 +16,10 @@ function Allmessages(){
   
    },[dispatch])
   
+function sendNotification(){
+  
+}
+
   return (
     <div className='allmessages'>
       { allChats && allChats.map((item,index)=>{
@@ -24,7 +28,7 @@ function Allmessages(){
      )
        })
      }
-     {/* <button onClick={callChat}>button</button> */}
+     <button onClick={sendNotification} >button</button>
      </div> 
      
     

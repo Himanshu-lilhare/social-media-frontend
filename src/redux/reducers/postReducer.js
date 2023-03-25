@@ -45,6 +45,17 @@ export const likePostReducer=createReducer(initialState,{
    state.loading=false
    state.error=state.payload
 },
+replyCommentPostRequest:(state)=>{
+  state.replyCommentLoading=true
+},
+replyCommentPostSuccess:(state,action)=>{
+ state.replyCommentLoading=false
+ state.message=action.payload.message
+},
+replyCommentPostFail:(state)=>{
+ state.replyCommentLoading=false
+ state.error=state.payload
+},
 createPostRequest:(state)=>{
   state.loading=true
 },
@@ -57,14 +68,14 @@ createPostFail:(state,action)=>{
  state.error=action.payload
 },
 deletePostRequest:(state)=>{
-  state.loading=true
+  state.deleteLoading=true
 },
 deletePostSuccess:(state,action)=>{
- state.loading=false
+ state.deleteLoading=false
  state.message=action.payload.message
 },
 deletePostFail:(state,action)=>{
- state.loading=false
+ state.deleteLoading=false
  state.error=action.payload
 },
 EditPostCaptionRequest:(state)=>{

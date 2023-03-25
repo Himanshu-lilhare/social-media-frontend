@@ -75,6 +75,36 @@ export const deleteCommentPost = (id, commentId) => async (dispatch) => {
     });
   }
 };
+export const replyCommentPost = (postId, commentId,comment) => async (dispatch) => {
+  try {
+     dispatch({
+      type: "replyCommentPostRequest",
+    });
+
+    const { data } = await axios.post(
+      `${serverLink}/replyToComment/${postId}`,
+      {
+       commentId,
+       comment
+      },
+      {
+        headers: {
+          "Content-Type": "application/json",
+        },
+        withCredentials: true,
+      }
+    );
+    dispatch({
+      type: "replyCommentPostSuccess",
+      payload: data,
+    });
+  } catch (error) {
+    dispatch({
+      type: "replyCommentPostFail",
+      payload: error.response.data.error,
+    });
+  }
+};
 
 export const getMyPosts = () => async (dispatch) => {
   try {

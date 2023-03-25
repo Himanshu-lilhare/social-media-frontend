@@ -60,10 +60,10 @@ dispatch(loginUser(email,password))
       </form>
     
      </div>
-     <dvi className="wrapper2">
+     <div className="wrapper2">
         <p>Dont't have an Account ? </p>
         <Link to="/register"><button>Sign In</button></Link> 
-    </dvi>
+    </div>
     </div>
   
   </div>

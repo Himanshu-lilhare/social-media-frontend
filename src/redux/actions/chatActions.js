@@ -60,7 +60,7 @@ export const sendMessageBaby = (chatId,content,socket) => async (dispatch) => {
       },
       withCredentials: true,
     });
-    socket.emit('newmessage',data.message)
+   
 
     dispatch({ type: "sendMessageSuccess", payload: data });
  

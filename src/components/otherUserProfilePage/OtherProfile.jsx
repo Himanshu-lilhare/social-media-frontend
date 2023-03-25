@@ -33,18 +33,14 @@ const OtherProfile = () => {
   
   }, [dispatch,id]);
   useEffect(() => {
-   
-    if (user) {
-      user.followers.forEach((item) => {
-        if (item._id === me._id) {
-          setFollow(true);
-        } else {
-          setFollow(false);
-        }
-      });
-    }
-  }, [user, me._id]);
- console.log(user)
+ 
+    me.following?.forEach(following=>{
+      if(!(following._id===user._id)) return
+      setFollow(true) 
+    })
+ 
+  }, [user?._id]);
+
  
   function followerToggler() {
     setFollowerModal(!followerModal);
@@ -58,8 +54,8 @@ navigate(`/message/chat?userId=${user._id}`)
 
   }
  
-  async function followUnfollowHandler(){
-    setFollow(!follow)
+ async function followUnfollowHandler(){
+     setFollow(prev=>!prev)
     await dispatch(followUnfollowUser(user._id))
     await dispatch(getOtherUser(user._id))
     dispatch(loadUser())
@@ -94,11 +90,19 @@ navigate(`/message/chat?userId=${user._id}`)
                   <button onClick={followingToggler}>
                     {user.following.length} Follwing
                   </button>
-                  {
+                  <button onClick={followUnfollowHandler}>
+                    {
+                      follow ? 'Unfollow' : 'follow'
+                    }
+                  </button>
+
+                  {/* <button>
+                  { 
+                
+                follow ? 'Unfollow ? "Follow'
+                }
+                  </button> */}
                  
-                 follow ? <button onClick={followUnfollowHandler}>Unfollow</button> : <button onClick={followUnfollowHandler}>Follow</button>
-                 
-                  }
                 </>
               )}
             </div>
