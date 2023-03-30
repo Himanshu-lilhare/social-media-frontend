@@ -22,7 +22,7 @@ export const loginUser = (email, password) => async (dispatch) => {
 };
 
 export const registerUser =
-  (name, email, password, imageUri) => async (dispatch) => {
+  (name, email, password, imageUri,navigate) => async (dispatch) => {
     try {
       dispatch({ type: "registerRequest" });
       console.log(email, password);
@@ -38,6 +38,8 @@ export const registerUser =
       );
       console.log(data);
       dispatch({ type: "registerSuccess", payload: data });
+      navigate('/')
+
     } catch (error) {
       dispatch({ type: "registerFail", payload: error.response.data.error });
     }

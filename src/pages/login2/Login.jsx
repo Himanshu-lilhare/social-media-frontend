@@ -8,16 +8,21 @@ import image2 from "../../images/image2.jfif"
 import image3 from "../../images/image3.jfif"
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
-import {useDispatch} from "react-redux"
+import {useDispatch, useSelector} from "react-redux"
 import { loginUser } from '../../redux/actions/userAction';
+import ButtonLoader from '../../components/loader/ButtonLoader';
 const Login2 = () => {
   const [email,setemail]=useState("")
   const [password,setpassword]=useState("")
   const dispatch=useDispatch()
+
+  const {loading}=useSelector(state=>state.userReducer)
+
 function submithandler(e){
 e.preventDefault()
 dispatch(loginUser(email,password))
 }
+
 
   return (
     <div className='login' >
@@ -56,7 +61,16 @@ dispatch(loginUser(email,password))
       <div className="password">
         <input value={password} onChange={(e)=>setpassword(e.target.value)} type="password" placeholder='ENTER YOUR PASSSWORD'  required/>
       </div>
-      <button type='submit'>LOG IN</button>
+      <button style={{
+      width:'76px'
+
+      }} type='submit'>
+      {
+      loading ? <ButtonLoader/>
+        : 'LOG IN'
+      }  
+  
+        </button>
       </form>
     
      </div>
