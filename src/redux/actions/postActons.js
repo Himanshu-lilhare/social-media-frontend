@@ -1,5 +1,6 @@
 import axios from "axios";
-const serverLink='http://localhost:5000'
+import { serverLink } from "../store";
+
 export const getFollowingPost = () => async (dispatch) => {
   try {
     dispatch({ type: "getFollowingpostRequest" });

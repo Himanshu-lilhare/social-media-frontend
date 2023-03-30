@@ -1,5 +1,6 @@
 import axios from "axios";
-const serverLink='http://localhost:5000'
+import { serverLink } from "../store";
+
 export const loginUser = (email, password) => async (dispatch) => {
   try {
     dispatch({ type: "loginRequest" });
@@ -22,7 +23,7 @@ export const loginUser = (email, password) => async (dispatch) => {
 };
 
 export const registerUser =
-  (name, email, password, imageUri,navigate) => async (dispatch) => {
+  (name, email, password, imageUri, navigate) => async (dispatch) => {
     try {
       dispatch({ type: "registerRequest" });
       console.log(email, password);
@@ -38,8 +39,7 @@ export const registerUser =
       );
       console.log(data);
       dispatch({ type: "registerSuccess", payload: data });
-      navigate('/')
-
+      navigate("/");
     } catch (error) {
       dispatch({ type: "registerFail", payload: error.response.data.error });
     }
@@ -89,12 +89,9 @@ export const searchUser =
 export const getOtherUser = (id) => async (dispatch) => {
   try {
     dispatch({ type: "otherUserRequest" });
-    const { data } = await axios.get(
-      `${serverLink}/getotheruser/${id}`,
-      {
-        withCredentials: true,
-      }
-    );
+    const { data } = await axios.get(`${serverLink}/getotheruser/${id}`, {
+      withCredentials: true,
+    });
     dispatch({ type: "otherUserSuccess", payload: data });
   } catch (error) {
     dispatch({ type: "otherUserFail", payload: error.response.data.error });
@@ -103,18 +100,15 @@ export const getOtherUser = (id) => async (dispatch) => {
 
 export const followUnfollowUser = (id) => async (dispatch) => {
   try {
-   
-
-
     dispatch({ type: "followUnfollowRequest" });
-    const { data } = await axios.get(
-      `${serverLink}/followUnfollow/${id}`,
-      {
-        withCredentials: true,
-      }
-    );
+    const { data } = await axios.get(`${serverLink}/followUnfollow/${id}`, {
+      withCredentials: true,
+    });
     dispatch({ type: "followUnfollowSuccess", payload: data });
   } catch (error) {
-    dispatch({ type: "followUnfollowFail", payload: error.response.data.error });
+    dispatch({
+      type: "followUnfollowFail",
+      payload: error.response.data.error,
+    });
   }
 };

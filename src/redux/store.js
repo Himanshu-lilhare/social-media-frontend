@@ -3,6 +3,8 @@ import { fetchingAndSendingMessages, getChatsOrCreateChats } from "./reducers/ch
 import { likePostReducer, myPostsReducer, othersPostsReducer, postReducer } from "./reducers/postReducer";
 import { allUserReducer, getOtherUser, userReducer } from "./reducers/userReducer";
 
+export const serverLink = "http://localhost:5000";
+
 export const store=configureStore({
     reducer:{
         userReducer:userReducer,

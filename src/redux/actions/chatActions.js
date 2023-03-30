@@ -1,7 +1,8 @@
 import axios from "axios";
+import { serverLink } from "../store";
 
 
-const serverLink='http://localhost:5000'
+
 
 
 export const getAllChats = () => async (dispatch) => {
