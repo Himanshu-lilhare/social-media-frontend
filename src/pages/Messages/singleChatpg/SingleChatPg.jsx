@@ -1,7 +1,7 @@
 import "./singlechtpg.css";
 import React, { useEffect, useRef, useState } from "react";
 import { BiArrowBack } from "react-icons/bi";
-import { Link, useParams, useSearchParams } from "react-router-dom";
+import { Link, useNavigate, useParams, useSearchParams } from "react-router-dom";
 import {
   accessChat,
   getAllMessages,
@@ -27,7 +27,7 @@ function SingleChatPg() {
   const [searchParams, setSearchParams] = useSearchParams();
   const [userId, setUserId] = useState(searchParams.get("userId"));
   const socket = useRef();
-
+  const navigate=useNavigate()
   console.log(allMessages);
   useEffect(() => {
     socket.current = io("http://localhost:5000");
@@ -108,13 +108,15 @@ function SingleChatPg() {
 
     dispatch(getAllMessages(searchParams.get("chatId")));
   }
-
+function goToMessages(){
+  navigate('/message')
+}
   return (
     <div className="singleChat">
      
       <header className="chatHead">
       {isTyping && <p className="typingIndicator">Typing...</p>}
-        <BiArrowBack className="backArrow" />
+        <BiArrowBack className="backArrow" onClick={goToMessages} />
         <Link to={`/profile/${userId}`} className="chatImg">
           <img src={"/login.png"} alt="chtaImg" />
         </Link>

@@ -15,10 +15,7 @@ function Allmessages(){
     console.log(allMessages)
   
    },[dispatch])
-  
-function sendNotification(){
-  
-}
+
 
   return (
     <div className='allmessages'>
@@ -28,7 +25,7 @@ function sendNotification(){
      )
        })
      }
-     <button onClick={sendNotification} >button</button>
+    
      </div> 
      
     

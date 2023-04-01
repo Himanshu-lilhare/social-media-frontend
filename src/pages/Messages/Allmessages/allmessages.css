@@ -28,6 +28,8 @@
 
 @media (max-width: 733px) {
     .allmessages {
+
+       margin-top: 60px;
      box-shadow: none;
     }
   }

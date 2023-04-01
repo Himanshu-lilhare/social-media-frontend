@@ -3,7 +3,12 @@ import "./App.css";
 import { Toaster } from "react-hot-toast";
 import Login2 from "./pages/login2/Login";
 import Register from "./pages/register/register";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes,
+  useLocation,
+} from "react-router-dom";
 
 import { useDispatch, useSelector } from "react-redux";
 import { loadUser } from "./redux/actions/userAction";
@@ -22,7 +27,7 @@ const SingleChatPg = lazy(() =>
 );
 
 const App = () => {
-  const { isAuthenticate,message,error } = useSelector(
+  const { isAuthenticate, message, error } = useSelector(
     (state) => state.userReducer
   );
   const dispatch = useDispatch();
@@ -36,11 +41,29 @@ const App = () => {
     dispatch(loadUser());
   }, [dispatch]);
 
+  function Abc() {
+    const location = useLocation();
+
+    function isSmallScreen() {
+      const innerWidth = window.innerWidth;
+      if (innerWidth > 950) return false;
+
+      return true;
+    }
+
+    if (location.pathname === "/message/chat" && isSmallScreen()) {
+      return false;
+    } else {
+      return <Header />;
+    }
+
+  }
+
   return (
     <Router>
       <Suspense fallback={<div>loading</div>}>
         <div className="app">
-          {isAuthenticate && <Header />}
+          {isAuthenticate && <Abc />}
           <Routes>
             <Route
               path="/"
