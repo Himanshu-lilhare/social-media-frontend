@@ -18,7 +18,7 @@ export const loginUser = (email, password) => async (dispatch) => {
     console.log(data);
     dispatch({ type: "loginSuccess", payload: data });
   } catch (error) {
-    dispatch({ type: "loginFail", payload: error.response.data.error });
+    dispatch({ type: "loginFail", payload: error.response.data?.error });
   }
 };
 
@@ -53,7 +53,7 @@ export const loadUser = () => async (dispatch) => {
     });
     dispatch({ type: "loadUserSuccess", payload: data });
   } catch (error) {
-    dispatch({ type: "loadUserFail", payload: error.response.data.error });
+    dispatch({ type: "loadUserFail", payload: error.response.data?.error });
   }
 };
 
