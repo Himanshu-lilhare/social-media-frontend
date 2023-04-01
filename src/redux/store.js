@@ -2,9 +2,9 @@ import { configureStore } from "@reduxjs/toolkit";
 import { fetchingAndSendingMessages, getChatsOrCreateChats } from "./reducers/chatReducer.js";
 import { likePostReducer, myPostsReducer, othersPostsReducer, postReducer } from "./reducers/postReducer";
 import { allUserReducer, getOtherUser, userReducer } from "./reducers/userReducer";
-
-export const serverLink = "http://localhost:5000";
-// export const serverLink = "https://social-media-backend-mu.vercel.app";
+// gfgdf
+// export const serverLink = "http://localhost:5000";
+export const serverLink = "https://social-media-backend-mu.vercel.app";
 
 export const store=configureStore({
     reducer:{
