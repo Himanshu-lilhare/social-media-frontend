@@ -5,7 +5,7 @@ import { allUserReducer, getOtherUser, userReducer } from "./reducers/userReduce
 
 export const serverLink = "http://localhost:5000";
 // export const serverLink = "https://social-media-backend-mu.vercel.app";
-// hfdfu
+
 export const store=configureStore({
     reducer:{
         userReducer:userReducer,
