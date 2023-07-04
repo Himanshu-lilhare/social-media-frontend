@@ -41,12 +41,14 @@ const CommentCard = ({postComments,postid,isAccount}) => {
         {
           visible && <p className="notWorking">
           Delete functionality is Not Working Now
+
+          <button onClick={Visible}>Close</button>
         </p>
         }
       
         {
-          isAccount ?  <button ><AiOutlineDelete onClick={()=>Visible()} onMouseOver={()=>Visible}/></button>
-          : comment.user._id === user._id ? <button  ><AiOutlineDelete   onMouseOver={()=>Visible()} onMouseLeave={()=>Visible()}/></button> : null 
+          isAccount ?  <button ><AiOutlineDelete onClick={Visible}/></button>
+          : comment.user._id === user._id ? <button  ><AiOutlineDelete  onClick={Visible}/></button> : null 
         }
        
         </div>
