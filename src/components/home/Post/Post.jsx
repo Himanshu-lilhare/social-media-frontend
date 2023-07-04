@@ -67,14 +67,14 @@ observer.unobserve(img)
   }, []);
 
   useEffect(() => {
-    post.likes &&
-      post.likes.map((likeid) => {
-        if (likeid._id === user._id) {
-          return setlike(true);
-        } else {
-          return setlike(false);
-        }
-      });
+     console.log('chala')
+ post.likes.forEach(like=>{
+  if(like._id===user._id.toString()){
+    setlike(true)
+  }else(
+    setlike(false)
+  )
+ })
 
       // if(message){
       //   toast.success(message)
@@ -84,7 +84,10 @@ observer.unobserve(img)
       //   toast.error(error)
       //   dispatch({type:'clearError'})
       //  }
-  }, [post.likes, user._id]);
+  }, [post.likes,user._id]);
+
+
+
 
 
  function loadImages(targetImage){
@@ -92,10 +95,13 @@ observer.unobserve(img)
    
  }
 
-  async function likehandler() {
-    setlike(prev=> !prev);
-    console.log(postid);
-    dispatch(likeUnlikePost(postid));
+   async function likehandler() {
+    await dispatch(likeUnlikePost(postid));
+ 
+  setlike(!like)
+    
+  
+    // dispatch(getFollowingPost())
     isAccount ? dispatch(getMyPosts()) : dispatch(getFollowingPost());
   }
   function showCommentHandler() {
@@ -140,7 +146,7 @@ observer.unobserve(img)
               height: "100%",
             }}
           >
-            {like ? (
+            {  like ? (
               <AiTwotoneLike style={{ color: "red" }} />
             ) : (
               <AiOutlineLike />

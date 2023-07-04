@@ -34,7 +34,7 @@ const OtherProfile = () => {
   }, [dispatch,id]);
   useEffect(() => {
  
-    me.following?.forEach(follow=>{
+   me && me?.following?.forEach(follow=>{
       if(!(follow._id===user?._id)) return
       setFollow(true) 
     })

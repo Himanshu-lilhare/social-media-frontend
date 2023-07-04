@@ -50,18 +50,19 @@ export const CommentPost = (id, comment) => async (dispatch) => {
   }
 };
 
-export const deleteCommentPost = (id, commentId) => async (dispatch) => {
+export const deleteCommentPost = (id, commentid) => async (dispatch) => {
   try {
     dispatch({
       type: "deleteCommentPostRequest",
     });
 
-    const { data } = await axios.delete(
+    const { data } = await axios.put(
       `${serverLink}/deletecomment/${id}`,
+      { commentid },
       {
-        data: commentId,
-      },
-      {
+        headers: {
+          "Content-Type": "application/json",
+        },
         withCredentials: true,
       }
     );

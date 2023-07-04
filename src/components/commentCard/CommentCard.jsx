@@ -4,18 +4,21 @@ import img from "../../images/profileimage.png"
 import { Link } from "react-router-dom"
 import { AiOutlineDelete } from "react-icons/ai"
 import { useDispatch, useSelector } from "react-redux"
-import { deleteCommentPost, getMyPosts, replyCommentPost } from "../../redux/actions/postActons"
+import { deleteCommentPost, getMyPosts, replyCommentPost,getFollowingPost } from "../../redux/actions/postActons"
 const CommentCard = ({postComments,postid,isAccount}) => {
   const [replyOfComment,setReplyOfComment]=useState('')
   const { user } = useSelector((state) => state.userReducer);
+  const [visible,setVisible]=useState(false)
   const dispatch=useDispatch()
 
-  function deleteCommentHandler(commentId){
-      dispatch(deleteCommentPost(postid,commentId))
-  }
+ 
   async function replyComment(commentId){
      await dispatch(replyCommentPost(postid,commentId,replyOfComment))
-     dispatch(getMyPosts())
+
+      isAccount ? dispatch(getMyPosts()) : dispatch(getFollowingPost())
+  }
+  function Visible(){
+   setVisible(!visible)
   }
   return(
   <div className="allComments">
@@ -36,8 +39,14 @@ const CommentCard = ({postComments,postid,isAccount}) => {
           }
         </p>
         {
-          isAccount ?  <button onClick={()=>deleteCommentHandler(comment._id)}><AiOutlineDelete/></button>
-          : comment.user._id === user._id ? <button onClick={()=>deleteCommentHandler(comment._id)}><AiOutlineDelete/></button> : null 
+          visible && <p className="notWorking">
+          Delete functionality is Not Working Now
+        </p>
+        }
+      
+        {
+          isAccount ?  <button ><AiOutlineDelete onClick={()=>Visible()} onMouseOver={()=>Visible}/></button>
+          : comment.user._id === user._id ? <button  ><AiOutlineDelete   onMouseOver={()=>Visible()} onMouseLeave={()=>Visible()}/></button> : null 
         }
        
         </div>

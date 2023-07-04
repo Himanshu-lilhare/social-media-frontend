@@ -18,9 +18,19 @@
    color: black;
 }
 .userCommentAndDelete{
+    position: relative;
     display: flex;
     justify-content: space-between;
     padding: 0.5rem 0rem;
+}
+.notWorking{
+    position: absolute;
+    top: -44px;
+    right: 00;
+    border: 1px solid black;
+    padding: 2px;
+    width: 48%;
+    text-align: center;
 }
 .userCommentAndDelete p{
    font-size: 1.2rem;

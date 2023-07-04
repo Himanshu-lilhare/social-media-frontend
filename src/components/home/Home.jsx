@@ -21,7 +21,7 @@ const Home = () => {
           posts && posts.length > 0 ?
             posts.map((ele)=>
             
-            <Post isAccount={false} post={ele} key={ele._id} postid={ele._id} caption={ele.caption}/>
+            <Post id={ele._id} isAccount={false} post={ele} key={ele._id} postid={ele._id} caption={ele.caption}/>
            
             ) : <h3 className="noPosts">No Posts yet..</h3>
            }
