@@ -44,7 +44,7 @@ const Post = ({ caption, postid, post, isAccount }) => {
     rootMargin:'50px 0px 0px 0px',
     threshold:0
   }
- console.log(post)
+ 
   useEffect(() => {
   let observer=new window.IntersectionObserver(function(entries,self){
     entries.forEach((entry)=>{
@@ -75,19 +75,17 @@ observer.unobserve(img)
           return setlike(false);
         }
       });
+
+      // if(message){
+      //   toast.success(message)
+      //   dispatch({type:'clearMessage'})
+      //  }
+      //  if(error){
+      //   toast.error(error)
+      //   dispatch({type:'clearError'})
+      //  }
   }, [post.likes, user._id]);
-  useEffect(() => {
-    if(message){
-     toast.success(message)
-     dispatch({type:'clearMessage'})
-    }
-    if(error){
-     toast.error(error)
-     dispatch({type:'clearError'})
-    }
- 
- 
- }, [message,error])
+
 
  function loadImages(targetImage){
   targetImage.src=targetImage.dataset.src
@@ -95,9 +93,9 @@ observer.unobserve(img)
  }
 
   async function likehandler() {
-    setlike(!like);
+    setlike(prev=> !prev);
     console.log(postid);
-    await dispatch(likeUnlikePost(postid));
+    dispatch(likeUnlikePost(postid));
     isAccount ? dispatch(getMyPosts()) : dispatch(getFollowingPost());
   }
   function showCommentHandler() {
@@ -174,7 +172,7 @@ deleteLoading ? <ButtonLoader/> :
             style={{ fontWeight: "600", cursor: "pointer" }}
           >
             {post.likes.length > 0
-              ? `${post.likes[0].name} and ${post.likes.length - 1} others `
+              ? post.likes[0]?.name === user?.name ? ` You and ${post.likes.length-1} others` :`${post.likes[0].name} and ${post.likes.length - 1} others `
               : "Nolikes"}
           </span>
         </p>

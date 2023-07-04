@@ -22,7 +22,7 @@ const OtherProfile = () => {
   const [followerModal, setFollowerModal] = useState(false);
   const [followingModal, setFollowingModal] = useState(false);
   const [path,setpath]=useState(window.location.pathname)
- 
+  const [isMe,setIsMe]=useState(false)
   const navigate=useNavigate()
   const {id}=useParams()
  
@@ -34,10 +34,17 @@ const OtherProfile = () => {
   }, [dispatch,id]);
   useEffect(() => {
  
-    me.following?.forEach(following=>{
-      if(!(following._id===user._id)) return
+    me.following?.forEach(follow=>{
+      if(!(follow._id===user?._id)) return
       setFollow(true) 
     })
+
+
+    let pathId = path.split('profile/')[1]
+
+    if(pathId.toString()===me?._id.toString()){
+      setIsMe(true)
+    }
  
   }, [user?._id]);
 
@@ -90,11 +97,14 @@ navigate(`/message/chat?userId=${user._id}`)
                   <button onClick={followingToggler}>
                     {user.following.length} Follwing
                   </button>
-                  <button onClick={followUnfollowHandler}>
+                  {
+                    !isMe &&  <button onClick={followUnfollowHandler}>
                     {
                       follow ? 'Unfollow' : 'follow'
                     }
                   </button>
+                  }
+                
 
                   {/* <button>
                   { 
