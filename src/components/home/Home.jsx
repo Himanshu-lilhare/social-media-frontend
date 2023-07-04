@@ -18,12 +18,12 @@ const Home = () => {
         <div className="postwrapper">
         <Suspense fallback={<div>Loading</div>}>
            {
-           posts &&
+          posts && posts.length > 0 ?
             posts.map((ele)=>
             
             <Post isAccount={false} post={ele} key={ele._id} postid={ele._id} caption={ele.caption}/>
            
-            )
+            ) : <h3 className="noPosts">No Posts yet..</h3>
            }
           </Suspense>
         </div>

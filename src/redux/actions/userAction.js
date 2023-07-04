@@ -22,6 +22,27 @@ export const loginUser = (email, password) => async (dispatch) => {
   }
 };
 
+export const demoLoginUser = (email, password) => async (dispatch) => {
+  try {
+    dispatch({ type: "demologinRequest" });
+    console.log(email, password);
+    const { data } = await axios.post(
+      `${serverLink}/login`,
+      { email, password },
+      {
+        headers: {
+          "Content-Type": "application/json",
+        },
+        withCredentials: true,
+      }
+    );
+    console.log(data);
+    dispatch({ type: "demologinSuccess", payload: data });
+  } catch (error) {
+    dispatch({ type: "demologinFail", payload: error.response.data?.error });
+  }
+};
+
 export const registerUser =
   (name, email, password, imageUri, navigate) => async (dispatch) => {
     try {

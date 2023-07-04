@@ -19,11 +19,11 @@ function Allmessages(){
 
   return (
     <div className='allmessages'>
-      { allChats && allChats.map((item,index)=>{
+      { allChats && allChats.length > 0 ? allChats.map((item,index)=>{
      return (
          <Singlemsg key={index+1} singleChat={item}  />
      )
-       })
+       }) : <h1>No Messages Yet</h1>
      }
     
      </div> 

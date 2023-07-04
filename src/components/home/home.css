@@ -20,7 +20,9 @@
     width: 1rem;
 }
 
-
+.noPosts{
+    margin: auto;
+}
 /* Media queries */
 
 @media(max-width:950px){

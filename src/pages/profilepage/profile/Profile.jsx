@@ -52,7 +52,10 @@ async function logoutHandler(){
               <div className="actualeditprofile">
                 <button className="editProfile">Edit Profile</button>
 
-                <FiSettings />
+                <FiSettings style={{
+                  
+                  cursor:"not-allowed"
+                }} />
               </div>
             </div>
             <div className="followpostinfo">

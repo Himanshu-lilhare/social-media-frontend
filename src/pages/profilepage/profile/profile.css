@@ -57,6 +57,9 @@
   transition: 0.3s ease;
 background-color: rgb(221, 221, 221);
 }
+.editProfile{
+  cursor:"not-allowed"
+}
 
 .editprofilediv {
  
@@ -74,11 +77,12 @@ background-color: rgb(221, 221, 221);
 .editprofilediv button {
   padding: 0.6rem 1rem;
   border-radius: 1rem;
-  background-color: transparent;
-  border: 0.5px solid black;
+  background-color: rgb(236, 236, 236);
+  border: none;
   margin-right: 1rem;
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   font-weight: 400;
+
 }
 .editprofilediv svg {
   font-size: 2rem;

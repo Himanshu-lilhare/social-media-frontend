@@ -6,17 +6,38 @@ export const userReducer=createReducer(initialState,{
 
     loginRequest:(state)=>{
         state.loading=true
-  
+    
     },
     loginSuccess:(state,action)=>{
         state.loading=false
+       
         state.isAuthenticate=true
         state.user=action.payload.user
         state.message=action.payload.message
-    
+        
     },
     loginFail:(state,action)=>{
         state.loading=false
+    
+        state.isAuthenticate=false
+        state.error=action.payload
+    
+    }
+    , demologinRequest:(state)=>{
+        state.demoloading=true
+    
+    },
+    demologinSuccess:(state,action)=>{
+        state.demoloading=false
+       
+        state.isAuthenticate=true
+        state.user=action.payload.user
+        state.message=action.payload.message
+        
+    },
+    demologinFail:(state,action)=>{
+        state.demoloading=false
+    
         state.isAuthenticate=false
         state.error=action.payload
     
